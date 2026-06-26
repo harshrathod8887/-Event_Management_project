@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .edit-card {
+            width: 550px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            text-align: center;
+            color: #4f46e5;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+        }
+
+        .btn-update {
+            width: 100%;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .btn-update:hover {
+            background: #4338ca;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="edit-card">
+
+        <a href="/dashboard" class="btn btn-outline-secondary mb-3">
+            ← Back
+        </a>
+
+        <h2 class="title">✏️ Edit Event</h2>
+
+        <form method="POST">
+
+            <div class="mb-3">
+                <label class="form-label">Event Name</label>
+                <input type="text" name="name" class="form-control" value="{{ event.name }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Event Date</label>
+                <input type="date" name="date" class="form-control" value="{{ event.date }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Venue</label>
+                <input type="text" name="venue" class="form-control" value="{{ event.venue }}" required>
+            </div>
+
+            <button type="submit" class="btn-update">
+                💾 Update Event
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
